@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: security_jwt
+  datasource:
+    url: jdbc:mysql://localhost:3306/security_jwt?createDatabaseIfNotExist=true
+    username: root
+    password: 123456
+  jooq:
+    sql-dialect: org.hibernate.dialect.MySQL8Dialect
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
+jwt.secret-key: security_key
+jwt.expired: 60000
